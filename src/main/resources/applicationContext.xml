@@ -6,5 +6,5 @@
 
     <import resource="classpath:spring-dao.xml"/>
     <import resource="spring-service.xml"/>
-<!--    <import resource="spring-MVC.xml"/>-->
+    <import resource="spring-MVC.xml"/>
 </beans>

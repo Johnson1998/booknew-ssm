@@ -51,5 +51,4 @@
     </aop:config>
 
 
-    <jdbc:embedded-database id="dataSource"/>
 </beans>
