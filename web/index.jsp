@@ -12,5 +12,7 @@
 </head>
 <body>
     <a href="${pageContext.request.contextPath}/user/showAllUser">所有用户信息</a>
+    <a href="${pageContext.request.contextPath}/user/toRegister">register</a>
+    <a href="${pageContext.request.contextPath}/user/toLogin">login</a>
 </body>
 </html>

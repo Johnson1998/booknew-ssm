@@ -28,6 +28,9 @@
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.4" />
           <element id="library" level="project" name="Maven: javax.servlet.jsp:jsp-api:2.2" />
           <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
+          <element id="library" level="project" name="Maven: com.github.penggle:kaptcha:2.3.2" />
+          <element id="library" level="project" name="Maven: com.jhlabs:filters:2.0.235-1" />
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="bookssm/web/Web" />

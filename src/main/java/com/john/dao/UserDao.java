@@ -13,4 +13,12 @@ import java.util.List;
 @Repository
 public interface UserDao {
     public List<User> queryAllUser();
+
+    User queryUserByUsername(@Param("username") String username);
+
+    User queryUserByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
+
+    int saveUser(User user);
+
+    int updateUser(User user);
 }

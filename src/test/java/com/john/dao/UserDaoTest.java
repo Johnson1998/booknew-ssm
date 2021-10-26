@@ -22,4 +22,43 @@ public class UserDaoTest {
         System.out.println(users);
         session.close();
     }
+
+    @Test
+    public void queryUserByUsername(){
+        SqlSession session = MyBatisUtil.getSqlSession();
+
+        //2.获取dao的代理
+        UserDao dao = session.getMapper(UserDao.class);
+        User admin41 = dao.queryUserByUsername("admin41");
+        System.out.println(admin41);
+        session.close();
+
+    }
+    @Test
+    public void queryUserByUsernameAndPassword(){
+        SqlSession session = MyBatisUtil.getSqlSession();
+
+        //2.获取dao的代理
+        UserDao dao = session.getMapper(UserDao.class);
+        User admin41 = dao.queryUserByUsernameAndPassword("admin41", "123456");
+        System.out.println(admin41);
+        session.close();
+
+    }
+
+    @Test
+    public void saveUser(){
+        SqlSession session = MyBatisUtil.getSqlSession();
+
+        //2.获取dao的代理
+        UserDao dao = session.getMapper(UserDao.class);
+        User user = new User();
+        user.setUsername("gogogogogo");
+        user.setPassword("123444321");
+        user.setEmail("asdas@qq.com");
+        dao.saveUser(user);
+        session.commit();
+        session.close();
+
+    }
 }
