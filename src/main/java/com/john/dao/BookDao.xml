@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.john.dao.BookDao">
+
+    <insert id="addBook" parameterType="Book">
+        insert into t_book (name, price, author, sales, stock, img_path)
+        values (#{name}, #{price}, #{author}, #{sales}, #{stock}, #{imgPath});
+    </insert>
+
+    <delete id="deleteBookById">
+        delete from t_book where id = #{id}
+    </delete>
+
+    <update id="updateBook" parameterType="Book">
+        update t_book
+        set name = #{name}, author = #{author}, price = #{price}, sales = #{sales}, stock = #{stock}, img_path =
+            #{imgPath}
+        where id = #{id};
+    </update>
+
+    <select id="queryBookById" resultType="Book">
+        select *
+        from t_book
+        where id = #{id};
+    </select>
+
+    <select id="queryBooks" resultType="Book">
+        select *
+        from t_book;
+    </select>
+
+    <select id="queryForPageTotalCount" resultType="java.lang.Integer">
+        select count(*) from t_book;
+    </select>
+<!--    public Integer queryForPageTotalCount() {-->
+<!--    String sql = "select count(*) from t_book";-->
+<!--    Number count = (Number)this.queryForSingleValue(sql, new Object[0]);-->
+<!--    return count.intValue();-->
+<!--    }-->
+
+    <select id="queryForPageItems" parameterType="map" resultType="Book">
+        select *
+        from t_book
+        limit #{begin}, #{end}
+    </select>
+
+<!--    public List<Book> queryForPageItems(int begin, int pageSize) {-->
+<!--    String sql = "select id, name, author, price, sales, stock, `img_path` imgPath from t_book limit ?,?";-->
+<!--    return this.queryForList(Book.class, sql, new Object[]{begin, pageSize});-->
+<!--    }-->
+
+    <select id="queryForPageTotalCountByPrice" resultType="java.lang.Integer">
+        select count(*)
+        from t_book
+        where price between #{min} and #{max};
+    </select>
+
+<!--    @Override-->
+<!--    public Integer queryForPageTotalCountByPrice(int min, int max) {-->
+<!--    String sql = "select count(*) from t_book where price between ? and ?";-->
+<!--    Number count = (Number)this.queryForSingleValue(sql, new Object[]{min, max});-->
+<!--    return count.intValue();-->
+<!--    }-->
+
+    <select id="queryForPageItemsByPrice" resultType="Book">
+        select * from t_book where price order by price limit #{min},#{max};
+    </select>
+
+<!--    @Override-->
+<!--    public List<Book> queryForPageItemsByPrice(int begin, int pageSize, int min, int max) {-->
+<!--    String sql = "select id, name, author, price, sales, stock, `img_path` imgPath " +-->
+<!--    "from t_book  where price between ? and ? order by price limit ?,?";-->
+<!--    return this.queryForList(Book.class, sql, new Object[]{min, max, begin, pageSize, });-->
+<!--    }-->
+
+</mapper>

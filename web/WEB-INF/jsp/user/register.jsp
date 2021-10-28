@@ -22,7 +22,7 @@
                     $("#sendCode").attr("disabled", "true");
                     $("#sendCode").val(curCount+"秒重新发送");
                     InterValObj = window.setInterval(setRemainTime, 1000);
-                    $.post("${basePath}userServlet", "action=ajaxSendEmailCode&email="+$("#email").val(),
+                    $.post("user/sendEmailCode", {email:""+$("#email").val()},
                         function (data) {
                             alert("发送成功");
                         } )

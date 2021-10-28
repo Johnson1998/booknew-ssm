@@ -36,6 +36,7 @@
 
     <mappers>
         <mapper resource="com/john/dao/UserDao.xml"/>
+        <mapper resource="com/john/dao/BookDao.xml"/>
     </mappers>
 
 
