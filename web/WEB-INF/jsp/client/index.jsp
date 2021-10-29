@@ -115,7 +115,7 @@
 <%--        </c:if>--%>
     </div>
 
-<%--    <%@include file="/WEB-INF/jsp/common/page_nav.jsp"%>--%>
+    <%@include file="/WEB-INF/jsp/common/page_nav.jsp"%>
 
 </div>
 

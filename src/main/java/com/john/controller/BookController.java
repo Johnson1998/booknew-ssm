@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -39,8 +40,9 @@ public class BookController {
 //    }
 
     @RequestMapping(value="/page/{pageNo}/{pageSize}")
-    public String page(Integer pageNo, Integer pageSize, Model model
+    public String page(@PathVariable("pageNo") Integer pageNo, @PathVariable("pageSize") Integer pageSize, Model model
     ){
+        System.out.println("pageNo+++"+pageNo+"pageSize"+pageSize);
         if (pageNo == null || pageNo <= 0){
             pageNo = 1;
         }
