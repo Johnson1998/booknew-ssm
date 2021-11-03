@@ -66,7 +66,7 @@
 <!--    }-->
 
     <select id="queryForPageItemsByPrice" resultType="Book">
-        select * from t_book where price order by price limit #{min},#{max};
+        select * from t_book where price between #{min} and #{max} order by price limit #{begin},#{pageSize};
     </select>
 
 <!--    @Override-->

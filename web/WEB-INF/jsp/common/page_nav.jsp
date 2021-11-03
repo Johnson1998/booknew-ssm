@@ -22,7 +22,7 @@
                     【${i}】
                 </c:if>
                 <c:if test="${i != page.pageNo}">
-                    <a href="${page.url}&pageNo=${i}">
+                    <a href="${page.url}/${i}/4">
                             ${i}</a>
                 </c:if>
             </c:forEach>

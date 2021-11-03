@@ -43,10 +43,10 @@
         <c:if test="${not empty sessionScope.user}">
             <span>欢迎<span class="um_span">${sessionScope.user.username}</span>光临智慧书城书城</span>
             <a href="OrderServlet?action=showMyOrders&userId=${sessionScope.user.id}">我的订单</a>
-            <a href="userServlet?action=logout">注销</a>&nbsp;&nbsp;
+            <a href="user/logout">注销</a>&nbsp;&nbsp;
         </c:if>
         <a href="pages/cart/cart.jsp">购物车</a>
-        <a href="pages/manager/manager.jsp">后台管理</a>
+        <a href="manager/manager">后台管理</a>
 
     </div>
     <span class="wel_word">智慧书城</span>
@@ -54,7 +54,7 @@
 <div id="main">
     <div id="book">
         <div class="book_cond">
-            <form action="book/pageByPrice" method="get">
+            <form action="clientBook/pageByPrice" method="get">
                 价格：<input id="min" type="text" name="min" value="${param.min}"> 元 -
                 <input id="max" type="text" name="max" value="${param.max}"> 元
                 <input type="submit" value="查询" />

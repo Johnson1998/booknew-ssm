@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.mail.Session;
 import javax.mail.Transport;
@@ -32,6 +33,13 @@ import static com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY;
 public class UserController {
     @Autowired
     private UserService userService;
+
+    @RequestMapping("/logout")
+    public String logout(HttpSession sess){
+        sess.removeAttribute("user");
+
+        return "redirect:/user/login";
+    }
 
     @RequestMapping("/showAllUser")
     public String showAllUser(Model model){

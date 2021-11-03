@@ -22,5 +22,6 @@
 <!--    <mvc:view-controller path="/index" view-name="client/index"></mvc:view-controller>-->
     <mvc:view-controller path="/user/toLogin" view-name="user/login"></mvc:view-controller>
     <mvc:view-controller path="/user/toRegister" view-name="user/register"></mvc:view-controller>
-
+    <mvc:view-controller path="/manager/manager" view-name="manager/manager"></mvc:view-controller>
+    
 </beans>
