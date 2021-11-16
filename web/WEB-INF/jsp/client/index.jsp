@@ -18,7 +18,7 @@
                 var bookId = $(this).attr("bookId");
                 <%--if(${empty sessionScope.cart}){--%>
                 //使用表单实现购物车功能
-                location.href = "${basePath}CartServlet?action=addItem&id=" + bookId;
+                location.href = "cart/addItem/" + bookId;
                 <%--}else{--%>
                 <%--&lt;%&ndash;location.href = "${basePath}CartServlet?action=addItem&id=" + bookId;&ndash;%&gt;--%>
                 <%--// 发ajax请求，添加商品到购物车--%>
@@ -45,7 +45,7 @@
             <a href="OrderServlet?action=showMyOrders&userId=${sessionScope.user.id}">我的订单</a>
             <a href="user/logout">注销</a>&nbsp;&nbsp;
         </c:if>
-        <a href="pages/cart/cart.jsp">购物车</a>
+        <a href="cart/cart">购物车</a>
         <a href="manager/manager">后台管理</a>
 
     </div>
@@ -104,7 +104,7 @@
                         <span class="sp2">${Book.stock}</span>
                     </div>
                     <div class="book_add">
-                        <button bookId="${book.id}" class="addToCart">加入购物车</button>
+                        <button bookId="${Book.id}" class="addToCart">加入购物车</button>
                     </div>
                 </div>
             </div>

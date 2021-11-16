@@ -8,6 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div>
     <a href="book/page/1/4">图书管理</a>
-    <a href="OrderServlet?action=showAllOrders">订单管理</a>
+    <a href="order/showAllOrders">订单管理</a>
     <a href="index.jsp">返回商城</a>
 </div>

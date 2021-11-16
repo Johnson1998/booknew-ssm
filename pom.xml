@@ -99,9 +99,18 @@
             <version >1.4.7</version >
         </dependency >
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
+        </dependency>
 
 
     </dependencies>
+    <properties>
+        <maven.compiler.source>14</maven.compiler.source>
+        <maven.compiler.target>14</maven.compiler.target>
+    </properties>
 
 
     <!-- 静态资源导出问题-->

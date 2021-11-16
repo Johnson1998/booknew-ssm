@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.john.dao.OrderDao">
+<!--    public int saveOrder(Order order);-->
+    <insert id="saveOrder" parameterType="Order">
+        insert into t_order (`order_id`, `create_time`, `price`, `status`, `user_id`)
+        values (#{orderId}, #{createTime}, #{price}, #{status}, #{userId});
+    </insert>
+
+
+<!--    public List<Order> queryOrders();-->
+    <select id="queryOrders" resultType="Order">
+        select *
+        from t_order;
+    </select>
+
+<!--    public void changeOrderStatus(String orderId, Integer status);-->
+    <update id="changeOrderStatus">
+        update t_order
+        set `status` = #{status}
+        where `order_id` = #{orderId};
+    </update>
+
+<!--    public List<Order> queryOrderByUserId(int userId);-->
+    <select id="queryOrderByUserId" resultType="Order">
+        select *
+        from t_order where `user_id`= #{userId};
+    </select>
+    
+</mapper>

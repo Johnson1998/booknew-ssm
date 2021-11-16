@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.john.dao.OrderItemDao">
+    <insert id="saveOrderItem" parameterType="OrderItem">
+        insert into t_order_item (`name`, `count`, `price`, `total_price`, `order_id`)
+        values (#{name}, #{count}, #{price}, #{totalPrice}, #{orderId});
+    </insert>
+
+    <select id="queryOrderItemByOrderId" resultType="OrderItem">
+        select *
+        from t_order_item where order_id = #{orderId};
+    </select>
+
+
+</mapper>
