@@ -8,8 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div id="page_nav">
     <c:if test="${page.pageNo > 1}">
-        <a href="${page.url}/1/4">首页</a>
-        <a href="${page.url}/${page.pageNo-1}/4">上一页</a>
+        <a href="${page.url}">首页</a>
+        <a href="${page.url}/${page.pageNo-1}">上一页</a>
     </c:if>
 
 
@@ -22,7 +22,7 @@
                     【${i}】
                 </c:if>
                 <c:if test="${i != page.pageNo}">
-                    <a href="${page.url}/${i}/4">
+                    <a href="${page.url}/${i}">
                             ${i}</a>
                 </c:if>
             </c:forEach>
@@ -37,7 +37,7 @@
                             【${i}】
                         </c:if>
                         <c:if test="${i != page.pageNo}">
-                            <a href="${page.url}/${i}/4">
+                            <a href="${page.url}/${i}">
                                     ${i}</a>
                         </c:if>
                     </c:forEach>
@@ -49,7 +49,7 @@
                             【${i}】
                         </c:if>
                         <c:if test="${i != page.pageNo}">
-                            <a href="${page.url}/${i}/4">
+                            <a href="${page.url}/${i}">
                                     ${i}</a>
                         </c:if>
                     </c:forEach>
@@ -61,7 +61,7 @@
                             【${i}】
                         </c:if>
                         <c:if test="${i != page.pageNo}">
-                            <a href="${page.url}/${i}/4">
+                            <a href="${page.url}/${i}">
                                     ${i}</a>
                         </c:if>
                     </c:forEach>
@@ -74,7 +74,7 @@
     <c:if test="${page.pageNo < page.pageTotal}">
         <a href="${page.url}/
 					${page.pageNo+1}/4">下一页</a>
-        <a href="${page.url}/${ page.pageTotal }/4">末页</a>
+        <a href="${page.url}/${ page.pageTotal }">末页</a>
     </c:if>
 
     共${ page.pageTotal}页，${ page.pageTotalCount}条记录
@@ -92,7 +92,7 @@
                 // javasrcipt语言中提供了一个location地址栏对象
                 // 它有一个属性叫href。它可以获取浏览器地址中的地址
                 location.href = "${page.url}/" +
-                    pageNo+"/4";
+                    pageNo;
             });
         });
     </script>

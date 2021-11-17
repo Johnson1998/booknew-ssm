@@ -29,8 +29,10 @@ public class ClientBookController {
     @Autowired
     private BookService bookService;
 
-    @RequestMapping(value="/page/{pageNo}/{pageSize}")
-    public String page(@PathVariable("pageNo") Integer pageNo, @PathVariable("pageSize") Integer pageSize, Model model
+    @RequestMapping(value = {"/page/{pageNo}/{pageSize}", "/page/{pageNo}", "/page"})
+    public String page(@PathVariable(value = "pageNo", required = false) Integer pageNo,
+                       @PathVariable(value = "pageSize", required = false) Integer pageSize,
+                       Model model
     ){
         System.out.println("pageNo+++"+pageNo+"pageSize"+pageSize);
         if (pageNo == null || pageNo <= 0){
