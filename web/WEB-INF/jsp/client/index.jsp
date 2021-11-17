@@ -42,7 +42,7 @@
         </c:if>
         <c:if test="${not empty sessionScope.user}">
             <span>欢迎<span class="um_span">${sessionScope.user.username}</span>光临智慧书城书城</span>
-            <a href="OrderServlet?action=showMyOrders&userId=${sessionScope.user.id}">我的订单</a>
+            <a href="order/showMyOrders/${sessionScope.user.id}">我的订单</a>
             <a href="user/logout">注销</a>&nbsp;&nbsp;
         </c:if>
         <a href="cart/cart">购物车</a>

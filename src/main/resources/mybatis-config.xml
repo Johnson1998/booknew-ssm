@@ -7,6 +7,8 @@
 
     <settings>
         <setting name="logImpl" value="STDOUT_LOGGING"/>
+<!--        开启数据库驼峰转换，即下划线变成pojo驼峰！！！！！-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
 
     <typeAliases>

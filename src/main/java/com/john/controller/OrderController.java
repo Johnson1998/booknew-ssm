@@ -2,6 +2,7 @@ package com.john.controller;
 
 import com.john.pojo.Cart;
 import com.john.pojo.Order;
+import com.john.pojo.OrderItem;
 import com.john.pojo.User;
 import com.john.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,4 +61,31 @@ public class OrderController {
         orderService.sendOrder(orderId);
         return "redirect:" + referer;
     }
+
+    @RequestMapping("/showOrderDetail/{orderId}")
+    public String showOrderDetail(@PathVariable("orderId") String orderId, Model model) {
+        List<OrderItem> orderItems = orderService.queryOrderItemByOrderId(orderId);
+        model.addAttribute("orderItemList", orderItems);
+        model.addAttribute("orderId", orderId);
+
+        return "order/order_detail";
+    }
+
+    @RequestMapping("/showMyOrders/{userId}")
+    public String showMyOrders(@PathVariable("userId") Integer userId, Model model) {
+        List<Order> myOrdersList = orderService.queryOrderByUserId(userId);
+        model.addAttribute("myOrdersList", myOrdersList);
+        System.out.println("看这里1111"+myOrdersList);
+        return "order/order";
+
+    }
+
+    @RequestMapping("/receiverOrder/{orderId}")
+    public String receiverOrder(@PathVariable("orderId") String orderId,
+                                @RequestHeader(value = "referer", required = false) final String referer) {
+        orderService.receiveOrder(orderId);
+        return "redirect:" + referer;
+    }
+
+
 }

@@ -25,11 +25,11 @@
 				<td>发货</td>
 				
 			</tr>
-			<c:forEach items="${requestScope.orderList}" var="order">
+			<c:forEach items="${orderList}" var="order">
 				<tr>
 					<td>${order.createTime}</td>
 					<td>${order.price}</td>
-					<td><a href="${basePath}OrderServlet?action=showOrderDetail&orderId=${order.orderId}">查看详情</a></td>
+					<td><a href="order/showOrderDetail/${order.orderId}">查看详情</a></td>
 					<c:choose>
 						<c:when test="${order.status == 0}">
 							<td><a href="order/sendOrder/${order.orderId}">点击发货</a></td>

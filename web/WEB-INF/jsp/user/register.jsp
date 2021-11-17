@@ -159,7 +159,7 @@
                     <h1>注册智慧书城会员</h1>
                     <span class="errorMsg">
 <%--									<%=request.getAttribute("msg")==null?"":request.getAttribute("msg")%>--%>
-										${ requestScope.msg }
+										${ msg }
 								</span>
                 </div>
                 <div class="form">
@@ -168,7 +168,7 @@
                             <label>用户名称：</label>
                             <input class="itxt" type="text" placeholder="请输入用户名"
                                    autocomplete="off" tabindex="1" name="username" id="username"
-                                   value="${ requestScope.username }"
+                                   value="${ username }"
                             />
                         </div>
 
@@ -188,7 +188,7 @@
                             <label>电子邮件：</label>
                             <input class="itxt" type="text" placeholder="请输入邮箱地址"
                                    autocomplete="off" tabindex="1" name="email" id="email"
-                                   value="${ requestScope.email }"
+                                   value="${ email }"
                             />
 
                         </div>
